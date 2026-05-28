@@ -59,8 +59,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md space-y-8 p-8 bg-white rounded-lg shadow-sm border border-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white">
+      <div className="w-full max-w-md space-y-8 p-8 bg-white rounded-xl shadow-lg shadow-blue-100/50 border border-blue-100">
         <div>
           <h2 className="text-center text-2xl font-bold">Acharya Attendance System</h2>
           <p className="text-center text-muted-foreground mt-2">
@@ -101,7 +101,7 @@ export default function LoginPage() {
             </div>
           )}
           
-          <Button type="submit" disabled={loading} className="w-full">
+          <Button type="submit" disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700">
             {loading ? 'Signing in...' : 'Sign In'}
           </Button>
         </form>

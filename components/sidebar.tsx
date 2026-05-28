@@ -81,11 +81,11 @@ export function Sidebar({ userRole }: SidebarProps) {
 
   if (!open) {
     return (
-      <aside className="flex h-screen flex-col w-16 bg-white border-r transition-all duration-300">
-        <div className="flex h-16 items-center justify-center border-b">
+      <aside className="flex h-screen flex-col w-16 bg-white border-r border-blue-100 transition-all duration-300">
+        <div className="flex h-16 items-center justify-center border-b border-blue-100">
           <button
             onClick={() => setOpen(true)}
-            className="p-2 rounded-md hover:bg-gray-100"
+            className="p-2 rounded-md hover:bg-blue-50 text-blue-600"
             aria-label="Toggle sidebar"
           >
             <ChevronRight className="h-5 w-5" />
@@ -96,12 +96,12 @@ export function Sidebar({ userRole }: SidebarProps) {
   }
 
   return (
-    <aside className="flex h-screen flex-col w-64 bg-white border-r transition-all duration-300">
-      <div className="flex h-16 items-center justify-between px-4 border-b">
-        <h1 className="text-xl font-bold truncate">Acharya Attendance System</h1>
+    <aside className="flex h-screen flex-col w-64 bg-white border-r border-blue-100 transition-all duration-300">
+      <div className="flex h-16 items-center justify-between px-4 border-b border-blue-100">
+        <h1 className="text-xl font-bold truncate bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Acharya Attendance System</h1>
         <button
           onClick={() => setOpen(false)}
-          className="p-2 rounded-md hover:bg-gray-100"
+          className="p-2 rounded-md hover:bg-blue-50 text-blue-600"
           aria-label="Toggle sidebar"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -112,20 +112,20 @@ export function Sidebar({ userRole }: SidebarProps) {
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center px-3 py-2 text-sm font-medium rounded-md ${
+            className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
               pathname === item.href
-                ? 'bg-gray-100 text-gray-900'
-                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                ? 'bg-blue-50 text-blue-700 border-l-2 border-blue-600 ml-0 pl-[10px]'
+                : 'text-gray-600 hover:bg-blue-50/50 hover:text-blue-600 ml-0.5 pl-[10.5px] border-l-2 border-transparent'
             }`}
           >
             {item.label}
           </Link>
         ))}
       </nav>
-      <div className="p-4 border-t">
+      <div className="p-4 border-t border-blue-100">
         <button
           onClick={handleLogout}
-          className="flex w-full items-center px-3 py-2 text-sm font-medium text-red-600 rounded-md hover:bg-red-50"
+          className="flex w-full items-center px-3 py-2 text-sm font-medium text-red-600 rounded-md hover:bg-red-50 transition-colors"
         >
           <LogOut className="mr-3 h-5 w-5" />
           Logout

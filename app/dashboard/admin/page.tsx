@@ -139,13 +139,13 @@ export default function AdminDashboard() {
           <h1 className="text-2xl font-bold text-gray-900">Event Management</h1>
           <p className="text-sm text-gray-500 mt-1">Create and manage upcoming college events.</p>
         </div>
-        <Button variant="default" className="flex items-center gap-2" onClick={() => setIsOpen(true)}>
+        <Button variant="default" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700" onClick={() => setIsOpen(true)}>
           <Plus className="w-4 h-4" /> Create Event
         </Button>
       </div>
 
       {error && (
-        <div className="rounded-bg p-4 text-destructive">
+        <div className="bg-red-50 text-red-600 p-4 rounded-md text-sm border border-red-200">
           {error}
         </div>
       )}
@@ -157,7 +157,7 @@ export default function AdminDashboard() {
       ) : (
         <div className="bg-white border rounded-lg shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-gray-50/50">
+            <TableHeader className="bg-blue-50/50">
               <TableRow>
                 <TableHead className="w-1/3">Title</TableHead>
                 <TableHead className="w-1/3">Date</TableHead>

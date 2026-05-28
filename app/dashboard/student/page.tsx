@@ -113,50 +113,51 @@ export default function StudentDashboard() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Available Events</h1>
+      <div className="mb-2">
+        <h1 className="text-2xl font-bold text-gray-900">Available Events</h1>
+        <p className="text-sm text-gray-500 mt-1">Browse events and submit attendance requests.</p>
+      </div>
 
       {error && (
-        <div className="rounded-bg p-4 text-destructive">
+        <div className="bg-red-50 text-red-600 p-4 rounded-md text-sm border border-red-200">
           {error}
         </div>
       )}
 
       {loading ? (
-        <div className="text-center py-8">
+        <div className="text-center py-12 text-gray-500">
           Loading events...
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {events.length > 0 ? (
             events.map((event) => (
-              <Card key={event.id} className="h-full cursor-pointer hover:shadow-lg transition-shadow"
+              <Card key={event.id} className="h-full cursor-pointer hover:shadow-md transition-all border-blue-100 hover:border-blue-200"
                     onClick={() => {
                       setSelectedEvent(event);
                       setIsOpen(true);
                     }}>
                 <CardHeader>
-                  <CardTitle className="text-lg">{event.title}</CardTitle>
+                  <CardTitle className="text-lg text-gray-900">{event.title}</CardTitle>
                   <CardDescription>
                     {new Date(event.date).toLocaleDateString()} • {event.venue}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground line-clamp-3">
+                  <p className="text-sm text-gray-600 line-clamp-3">
                     {event.description}
                   </p>
                 </CardContent>
                 <CardFooter className="flex justify-between items-center">
-                  <span className="text-xs text-muted-foreground">
-                    Event ID: {event.id}
+                  <span className="text-xs text-gray-400">
+                    {event.date}
                   </span>
-                  <Button variant="ghost" size="icon" aria-label="View details">
-                    {/* Arrow icon would go here */}
-                  </Button>
+                  <span className="text-xs font-medium text-blue-600">Request →</span>
                 </CardFooter>
               </Card>
             ))
           ) : (
-            <div className="col-span-full text-center py-8">
+            <div className="col-span-full text-center py-12 text-gray-500">
               No events available at the moment.
             </div>
           )}

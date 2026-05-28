@@ -204,7 +204,7 @@ export default function FacultyDashboard() {
       ) : (
         <div className="bg-white border rounded-lg shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-gray-50/50">
+            <TableHeader className="bg-blue-50/50">
               <TableRow>
                 <TableHead className="w-1/3">Student</TableHead>
                 <TableHead className="w-1/3">Event</TableHead>

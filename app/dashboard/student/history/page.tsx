@@ -116,7 +116,7 @@ export default function StudentHistory() {
       ) : (
         <div className="bg-white border rounded-lg shadow-sm overflow-hidden">
           <Table>
-            <TableHeader className="bg-gray-50/50">
+            <TableHeader className="bg-blue-50/50">
               <TableRow>
                 <TableHead>Event</TableHead>
                 <TableHead>Date</TableHead>
